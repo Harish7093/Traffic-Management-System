@@ -1,0 +1,91 @@
+// Define pins for Traffic Light 1
+const int red1Pin = 2;
+const int yellow1Pin = 3;
+const int green1Pin = 4;
+
+// Define pins for Traffic Light 2
+const int red2Pin = 5;
+const int yellow2Pin = 6;
+const int green2Pin = 7;
+
+// Track active lights and blink timing
+char activeLight1 = 'R';  // Default Red ON
+char activeLight2 = 'R';
+bool light1State = true;
+bool light2State = true;
+unsigned long previousMillis = 0;
+const long interval = 500;
+
+void setup() {
+  pinMode(red1Pin, OUTPUT);
+  pinMode(yellow1Pin, OUTPUT);
+  pinMode(green1Pin, OUTPUT);
+  pinMode(red2Pin, OUTPUT);
+  pinMode(yellow2Pin, OUTPUT);
+  pinMode(green2Pin, OUTPUT);
+  
+  Serial.begin(9600);
+  
+  // Start with red lights ON
+  turnOffAllLights();
+  digitalWrite(red1Pin, HIGH);
+  digitalWrite(red2Pin, HIGH);
+}
+
+void loop() {
+  unsigned long currentMillis = millis();
+
+  // Handle serial input
+  if (Serial.available() >= 2) {
+    char command = Serial.read();
+    char light = Serial.read();
+    
+    if (light == '1') {
+      activeLight1 = command;
+      light1State = true;  // Reset state to ON
+    } else if (light == '2') {
+      activeLight2 = command;
+      light2State = true;
+    }
+  }
+
+  // Handle blinking every 500ms
+  if (currentMillis - previousMillis >= interval) {
+    previousMillis = currentMillis;
+
+    // Traffic Light 1
+    blinkLight(activeLight1, 1, light1State);
+    light1State = !light1State;
+
+    // Traffic Light 2
+    blinkLight(activeLight2, 2, light2State);
+    light2State = !light2State;
+  }
+}
+
+void blinkLight(char light, int trafficLight, bool state) {
+  int redPin = (trafficLight == 1) ? red1Pin : red2Pin;
+  int yellowPin = (trafficLight == 1) ? yellow1Pin : yellow2Pin;
+  int greenPin = (trafficLight == 1) ? green1Pin : green2Pin;
+
+  // Turn off all first
+  digitalWrite(redPin, LOW);
+  digitalWrite(yellowPin, LOW);
+  digitalWrite(greenPin, LOW);
+
+  // Then toggle only the selected one
+  if (state) {
+    if (light == 'R') digitalWrite(redPin, HIGH);
+    else if (light == 'Y') digitalWrite(yellowPin, HIGH);
+    else if (light == 'G') digitalWrite(greenPin, HIGH);
+  }
+}
+
+void turnOffAllLights() {
+  digitalWrite(red1Pin, LOW);
+  digitalWrite(yellow1Pin, LOW);
+  digitalWrite(green1Pin, LOW);
+  digitalWrite(red2Pin, LOW);
+  digitalWrite(yellow2Pin, LOW);
+  digitalWrite(green2Pin, LOW);
+}

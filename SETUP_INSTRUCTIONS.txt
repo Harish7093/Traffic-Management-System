@@ -1,0 +1,46 @@
+# Traffic Management System - Setup and Usage Instructions
+
+## Prerequisites
+- Python 3.8+
+- OpenCV 
+- PyTorch
+- Streamlit
+- Arduino IDE (for hardware setup)
+- Required Python packages (listed in requirements.txt)
+
+## Hardware Setup
+1. Connect Arduino board to USB port
+2. Upload traffic_signals.ino sketch to Arduino
+3. Configure ESP32-CAM with provided firmware
+4. Connect traffic light modules to specified Arduino pins
+
+## Software Setup
+1. unzip and open TRAFFIC MANAGEMENT SYSTEM .zip file in  vs code:
+   
+2. Install dependencies:
+   ```pip install -r requirements.txt```
+3. Place trained model files in /models directory
+4. Update COM port in Combined_Detection.py if needed
+
+## Running the Application
+1. Navigate to project directory
+2. Launch Streamlit app:
+	
+   ```
+	cd webapp
+	streamlit run Introduction.py```
+3. Access web interface at http://localhost:8501
+
+## Features
+- Real-time vehicle detection and counting
+- Traffic density classification 
+- Automated signal timing based on traffic
+- Support for multiple traffic lights
+- Image capture and analysis
+- Hardware integration with Arduino
+
+## Troubleshooting
+- Verify Arduino connection and COM port
+- Check ESP32-CAM URL and connectivity 
+- Ensure model files are present
+- Review logs for any error messages

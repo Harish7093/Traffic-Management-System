@@ -1,0 +1,9 @@
+Select Section,Description/Content,Image/Video Output,timestamp
+Traffic Density Classification,"'
+    **Traffic Density Classification**
+
+    - The primary goal of traffic management is to make the movement of goods and persons as efficient, orderly, and safe as possible.
+    - Traffic Density Classification will be instrumental in redirecting traffic from major roads during peak hours and making the overall movement safer and more efficient.
+    - EfficientNet_b0 architecture is utilized for traffic density classification into Empty, Low, Medium, High, and Traffic Jam categories.
+    - The model achieved a mean average accuracy of 0.93 on the test dataset.
+    ",.gradio\flagged\ImageVideo Output\e9331e778ec4914676e3\image.webp,2024-11-17 15:16:25.291731
