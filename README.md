@@ -69,24 +69,28 @@ _Add screenshots here once available:_
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/yourusername/smart-traffic-management.git
-   cd smart-traffic-management
+      git clone https://github.com/yourusername/smart-traffic-management.git
+      cd smart-traffic-management
 
 
+2. **install required libraries**
 
---> install required libraries
 ```
-pip install -r requirements.txt
+      pip install -r requirements.txt
 ```
---> navigating to cd webapp using
+3. **navigating to cd webapp using**
+
    ``` bash
       cd webapp
    ```
---> running app
+4. **running app**
+
    ```bash
-   streamlit run Introduction.py
+      streamlit run Introduction.py
    ```
 
 if any queries , feel free to contact
+
 --> instagram
-link in profile 
+-->linkedIn
+      links in profile 
