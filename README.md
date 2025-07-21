@@ -75,14 +75,17 @@ _Add screenshots here once available:_
 
 
 --> install required libraries
+```
 pip install -r requirements.txt
-
+```
 --> navigating to cd webapp using
-cd webapp
-
+   ``` bash
+      cd webapp
+   ```
 --> running app
-streamlit run Introduction.py
-
+   ```bash
+   streamlit run Introduction.py
+   ```
 
 if any queries , feel free to contact
 --> instagram
