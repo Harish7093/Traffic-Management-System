@@ -17,7 +17,15 @@ This project aims to:
 - Replace traditional manual signal timers with **AI-based adaptive control**, optimizing traffic flow and cutting fuel wastage.
 
 ---
-[![Watch the demo](prototype/working_model_video.mp4)
+
+[!WATCH VIDEO]
+https://github.com/user-attachments/assets/c954e01f-4e89-4d74-8c2c-c13669710d05
+
+[!PROTOTYPE]
+
+![Prototype](https://github.com/user-attachments/assets/be843441-95ec-48de-8589-57706893676b)
+
+
 
 ---
 
